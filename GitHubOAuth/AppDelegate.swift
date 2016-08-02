@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+	
+	func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+		
+		if (options["UIApplicationOpenURLOptionsSourceApplicationKey"] as! String == "com.apple.SafariViewService") {
+			
+			NSNotificationCenter.defaultCenter().postNotificationName(Notification.closeSafariVC, object: url)
+			return true
+		}
+		return false
+	}
 
 
 }

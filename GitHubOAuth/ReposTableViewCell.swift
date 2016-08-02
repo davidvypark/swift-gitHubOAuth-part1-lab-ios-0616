@@ -116,6 +116,7 @@ class ReposTableViewCell: UITableViewCell {
         })
         
     }
+
     
     // MARK: Button image handling
     private func setImagesForStarred(button: UIButton) {
